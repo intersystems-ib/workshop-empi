@@ -1,7 +1,5 @@
 # Vector Search for MPI
-In this workflow we are going to test the Vector Search functionality applied for the management of an hipotetic Master Patient Index making use of the Vector Storage capabilities of IRIS database. 
-
-. 
+In this workflow we are going to test the Vector Search functionality applied for the management of an hipotetic Master Patient Index using the Vector Storage capabilities of IRIS database. 
 
 # What do you need to install? 
 * [Git](https://git-scm.com/downloads) 
@@ -22,13 +20,11 @@ $ docker-compose build
 
 ## What is purpose of this project?
 
-The main purpose of this project is to develop an interoperability production to generate embeddings for the demographic information of patients received from HL7 messages and to provide possible duplicated patients as the Master Patient Index tools do.
+The main purpose of this project is to develop an interoperability production to generate embeddings for the demographic information of patients received from HL7 messages and to provide possible duplicated patients as the Master Patient Index tools do using the vector search capabilities of IRIS.
 
 ## How does this project work?
 
 This project is designed as a docker compose project developed on InterSystems IRIS for Health Community edition and it uses a pre-trained text-similarity model named [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
-
-## Project
 
 As we said before, our code is developed on InterSystems IRIS for Health leveraging the Embedded Python and Vector Search functionalities. The project is responsible for:
 * Import HL7 file from */shared/in* folder.
@@ -46,4 +42,4 @@ Automatically an IRIS instance will be deployed and a production will be configu
 
 * Open the [Management Portal](http://localhost:52774/csp/sys/%25CSP.Portal.Home.zen?$NAMESPACE=EMPI).
 * Login using the default `superuser`/ `SYS` account.
-* Click on [Production](http://localhost:52774/csp/healthshare/empi/EnsPortal.ProductionConfig.zen?$NAMESPACE=EMPI) to access the production that we are going to use. You can access also through *Interoperability > User > Configure > Production*.
+* Click on [Production](http://localhost:52774/csp/healthshare/empi/EnsPortal.ProductionConfig.zen?PRODUCTION=EMPI.Production) to access the production that we are going to use. You can access also through *Interoperability > User > Configure > List > Productions* and select *EMPI.Production*.
